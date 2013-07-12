@@ -1,41 +1,47 @@
 html {
 	font-family: "Georgia", serif;
 }
-table.tablesorter {
-	font-family: "Helvetica", "Arial", sans-serif;
-	background-color: #CDCDCD;
-	margin:10px 0pt 15px;
-	font-size: 8pt;
+.mac {
+	font-family: "Bitstream Vera Sans Mono", "Consolas", monospace;
+}
+#status {
+	font-family: "Lucida Sans Unicode", "Helvetica", "Arial", sans-serif;
+}
+.tablesorter-default {
+	font-family: "Lucida Sans Unicode", "Helvetica", "Arial", sans-serif;
+	background-color: #ccc;
+	margin: 10px 0pt 15px;
+	font-size: 10pt;
 	text-align: left;
 }
-table.tablesorter thead tr th, table.tablesorter tfoot tr th {
-	background-color: #e6EEEE;
-	border: 1px solid #FFF;
-	font-size: 8pt;
+.tablesorter-default thead tr th, .tablesorter-default tfoot tr th {
+	background-color: #e6eeee;
+	border: 1px solid #fff;
+	font-size: 10pt;
 	padding: 4px;
 	padding-right: 25px;
 }
-table.tablesorter thead tr .header {
-	background-image: url(bg.gif);
+.tablesorter-default thead tr .tablesorter-header {
+	background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
 	background-repeat: no-repeat;
 	background-position: center right;
 	cursor: pointer;
 }
-table.tablesorter tbody td {
-	color: #3D3D3D;
+.tablesorter-default tbody td {
+	color: #333;
 	padding: 4px;
-	background-color: #FFF;
+	background-color: #fff;
 	vertical-align: top;
 }
-table.tablesorter tbody tr.odd td {
-	background-color:#F0F0F6;
+.tablesorter-default tbody tr:nth-child(even) td {
+	background-color: #f8f8f8;
 }
-table.tablesorter thead tr .headerSortUp {
-	background-image: url(asc.gif);
+.tablesorter-default thead tr .tablesorter-headerAsc {
+	background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
 }
-table.tablesorter thead tr .headerSortDown {
-	background-image: url(desc.gif);
+.tablesorter-default thead tr .tablesorter-headerDesc {
+	background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
 }
-table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
-	background-color: #8dbdd8;
+.tablesorter-default thead tr .tablesorter-headerAsc, .tablesorter thead tr .tablesorter-headerDesc {
+	background-color: #8bd;
 }

@@ -9,8 +9,8 @@ $hosts = json_decode(file_get_contents($hostFile));
 <title>LAN Status</title>
 <link rel="stylesheet" href="lan.css" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type="text/javascript"></script>
-<script src="/jquery.metadata.js"></script>
-<script src="/jquery.tablesorter.min.js"></script>
+<script src="jquery.metadata.js"></script>
+<script src="jquery.tablesorter.min.js"></script>
 <script>
 function ping(href, id) {
 	// Ping a specific host using the full ping.php href handed to us
@@ -30,7 +30,9 @@ $(document).ready(function() {
 		var href = $(this).attr("href");
 		var id = $(this).closest("tr").attr("id");
 		$.ajax({url: href, dataType: "text"}).done(function(result) {
-			alert("Wake-on-LAN magic packet sent");
+			$("<div>Wake-on-LAN magic packet sent to " + id + "</div>").appendTo("#status").delay(2000).fadeOut().queue(function () {
+				$(this).remove();
+			} );
 		} );
 		event.preventDefault();
 	} );
@@ -73,7 +75,7 @@ foreach ($hosts as $key => $hostData) {
 
 	echo "<tr id=\"{$nickname}\">\n";
 	echo "\t<td>" . $nickname . "</td>\n";
-	echo "\t<td>" . $mac . "</td>\n";
+	echo "\t<td class=\"mac\">" . $mac . "</td>\n";
 	echo "\t<td class=\"pinghost\">" . $host . "</td>\n";
 	echo "\t<td class=\"pingresult\">Unknown</td>\n";
 	echo "\t<td>\n";
@@ -86,5 +88,8 @@ foreach ($hosts as $key => $hostData) {
 ?>
 </tbody>
 </table>
+
+<div id="status"></div>
+
 </body>
 </html>

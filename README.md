@@ -3,7 +3,10 @@ LAN Status
 
 Simple set of PHP scripts to show LAN status and perform wake-on-LAN (WOL) requests.
 
-Requirements: modern version of PHP, Linux (for current ping command)
+Prerequisites:
+- modern version of PHP
+- Linux (for current ping command)
+- jQuery [tablesorter](http://tablesorter.com/) script with Metadata addon
 
 To use, copy `lan.json.example` to `lan.json` and edit its contents. Each host must have a `MAC` address in order to support wake-on-lan, and a `Host` in order to support ping.
 
