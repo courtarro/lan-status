@@ -1,5 +1,9 @@
 <?php
 
+// Code by Ethan Trewhitt
+//
+// favicon.ico courtesy http://www.visualpharm.com/
+
 $hostFile = "lan.json";
 $hosts = json_decode(file_get_contents($hostFile));
 
@@ -47,6 +51,10 @@ $(document).ready(function() {
 	// Automatically ping all the hosts
 	$(".pinghost").each(function(event) {
 		var host = $(this).text();
+
+		if (host == "(none)")
+			return;
+
 		var href = "ping.php?hostname=" + host;
 		var id = $(this).closest("tr").attr("id");
 		ping(href, id);
@@ -76,12 +84,20 @@ foreach ($hosts as $key => $hostData) {
 
 	echo "<tr id=\"{$nickname}\">\n";
 	echo "\t<td>" . $nickname . "</td>\n";
-	echo "\t<td class=\"mac\">" . $mac . "</td>\n";
-	echo "\t<td class=\"pinghost\">" . $host . "</td>\n";
-	echo "\t<td class=\"pingresult\">Unknown</td>\n";
+	echo "\t<td class=\"mac\">" . ($mac ? $mac : "(none)") . "</td>\n";
+	echo "\t<td class=\"pinghost\">" . ($host ? $host : "(none)") . "</td>\n";
+	echo "\t<td class=\"pingresult\">N/A</td>\n";
 	echo "\t<td>\n";
-	echo "\t\t<a href=\"ping.php?hostname={$host}\" class=\"pinglink\">Ping</a>\n";
-	echo "\t\t<a href=\"wol.php?nickname={$nickname}\" class=\"wakelink\">Wake</a>\n";
+	if ($host) {
+		echo "\t\t<a href=\"ping.php?hostname={$host}\" class=\"pinglink\">Ping</a>\n";
+	} else {
+		echo "\t\t<span class=\"disabled\" title=\"Hostname required to support ping\">Ping</span>\n";
+	}
+	if ($mac) {
+		echo "\t\t<a href=\"wol.php?nickname={$nickname}\" class=\"wakelink\">Wake</a>\n";
+	} else {
+		echo "\t\t<span class=\"disabled\" title=\"MAC address required to support wake-on-LAN\">Wake</span>\n";
+	}
 	echo "\t</td>\n";
 	echo "</tr>\n";
 }

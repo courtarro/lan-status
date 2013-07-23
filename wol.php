@@ -17,6 +17,11 @@ if (!property_exists($hosts, $g_nickname)) {
 	exit;
 }
 
+if (!property_exists($hosts, "MAC")) {
+	echo "Error: host has no MAC address";
+	exit;
+}
+
 $host = $hosts->$g_nickname;
 $mac = $host->MAC;
 
