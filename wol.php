@@ -36,4 +36,4 @@ socket_set_option($socket, SOL_SOCKET, SO_BROADCAST, 1);			// SO_BROADCAST allow
 socket_sendto($socket, $packet, strlen($packet), 0, $wolHost, $wolPort);
 socket_close($socket);
 
-echo "Packet sent";
+echo "Wake-on-LAN magic packet sent to ".$g_nickname;

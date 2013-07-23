@@ -35,7 +35,7 @@ $(document).ready(function() {
 		var href = $(this).attr("href");
 		var id = $(this).closest("tr").attr("id");
 		$.ajax({url: href, dataType: "text"}).done(function(result) {
-			$("<div>Wake-on-LAN magic packet sent to " + id + "</div>").appendTo("#status").delay(2000).fadeOut().queue(function () {
+			$("<div>" + result + "</div>").appendTo("#status").delay(2000).fadeOut().queue(function () {
 				$(this).remove();
 			} );
 		} );
