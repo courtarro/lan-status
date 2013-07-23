@@ -10,41 +10,41 @@ html {
 .disabled {
 	color: #888;
 }
-.tablesorter-default {
+.tablesorter {
 	font-family: "Lucida Sans Unicode", "Helvetica", "Arial", sans-serif;
 	background-color: #ccc;
 	margin: 10px 0pt 15px;
 	font-size: 10pt;
 	text-align: left;
 }
-.tablesorter-default thead tr th, .tablesorter-default tfoot tr th {
+.tablesorter thead tr th, .tablesorter tfoot tr th {
 	background-color: #e6eeee;
 	border: 1px solid #fff;
 	font-size: 10pt;
 	padding: 4px;
 	padding-right: 25px;
 }
-.tablesorter-default thead tr .tablesorter-header {
+.tablesorter thead tr .tablesorter-header {
 	background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
 	background-repeat: no-repeat;
 	background-position: center right;
 	cursor: pointer;
 }
-.tablesorter-default tbody td {
+.tablesorter tbody td {
 	color: #333;
 	padding: 4px;
 	background-color: #fff;
 	vertical-align: top;
 }
-.tablesorter-default tbody tr:nth-child(even) td {
+.tablesorter tbody tr:nth-child(even) td {
 	background-color: #f8f8f8;
 }
-.tablesorter-default thead tr .tablesorter-headerAsc {
+.tablesorter thead tr .tablesorter-headerAsc {
 	background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
 }
-.tablesorter-default thead tr .tablesorter-headerDesc {
+.tablesorter thead tr .tablesorter-headerDesc {
 	background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
 }
-.tablesorter-default thead tr .tablesorter-headerAsc, .tablesorter thead tr .tablesorter-headerDesc {
+.tablesorter thead tr .tablesorter-headerAsc, .tablesorter thead tr .tablesorter-headerDesc {
 	background-color: #8bd;
 }
