@@ -7,20 +7,10 @@ $wolPort = 9;
 
 $g_nickname = @$_GET['nickname'];
 
-if (!$g_nickname) {
-	echo "Error: missing host nickname";
-	exit;
-}
-
-if (!property_exists($hosts, $g_nickname)) {
-	echo "Error: invalid host nickname";
-	exit;
-}
-
-if (!property_exists($hosts, "MAC")) {
-	echo "Error: host has no MAC address";
-	exit;
-}
+// Error checks
+if (!$g_nickname) exit("Error: missing host nickname");
+if (!property_exists($hosts, $g_nickname)) exit("Error: invalid host nickname");
+if (!property_exists($hosts, "MAC")) exit("Error: host has no MAC address");
 
 $host = $hosts->$g_nickname;
 $mac = $host->MAC;
