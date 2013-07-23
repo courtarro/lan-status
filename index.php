@@ -8,6 +8,7 @@ $hosts = json_decode(file_get_contents($hostFile));
 <head>
 <title>LAN Status</title>
 <link rel="stylesheet" href="lan.css" />
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type="text/javascript"></script>
 <script src="jquery.metadata.js"></script>
 <script src="jquery.tablesorter.min.js"></script>
