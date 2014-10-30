@@ -64,7 +64,7 @@ $(document).ready(function() {
 </head>
 <body>
 <h1>LAN Status</h1>
-<table id="hostlist" class="tablesorter {sortlist: [[0,0]]}">
+<table id="hostlist" class="tablesorter {sortlist: [[2,0]]}">
 <thead>
 <tr>
 	<th>Nickname</th>
@@ -83,7 +83,7 @@ foreach ($hosts as $key => $hostData) {
 	$host = @$hostData->Host;
 
 	echo "<tr id=\"{$nickname}\">\n";
-	echo "\t<td>" . $nickname . "</td>\n";
+	echo "\t<td>{$nickname}</td>\n";
 	echo "\t<td class=\"mac\">" . ($mac ? $mac : "(none)") . "</td>\n";
 	echo "\t<td class=\"pinghost\">" . ($host ? $host : "(none)") . "</td>\n";
 	echo "\t<td class=\"pingresult\">N/A</td>\n";
